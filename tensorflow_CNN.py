@@ -75,19 +75,19 @@ def random_mini_batches(X, Y, mini_batch_size = 64, seed = 0):
     # Step 2: Partition (shuffled_X, shuffled_Y). Minus the end case.
     num_complete_minibatches = math.floor(m/mini_batch_size) # number of mini batches of size mini_batch_size in your partitionning
     for k in range(0, num_complete_minibatches):
-        ### START CODE HERE ### (approx. 2 lines)
+        
         mini_batch_X = shuffled_X[k*mini_batch_size:(k+1)*mini_batch_size]
         mini_batch_Y = shuffled_Y[k*mini_batch_size:(k+1)*mini_batch_size]
-        ### END CODE HERE ###
+        
         mini_batch = (mini_batch_X, mini_batch_Y)
         mini_batches.append(mini_batch)
     
     # Handling the end case (last mini-batch < mini_batch_size)
     if m % mini_batch_size != 0:
-        ### START CODE HERE ### (approx. 2 lines)
+        
         mini_batch_X = shuffled_X[k*mini_batch_size:k*mini_batch_size+m-mini_batch_size*num_complete_minibatches]
         mini_batch_Y =shuffled_Y[k*mini_batch_size:k*mini_batch_size+m-mini_batch_size*num_complete_minibatches]
-        ### END CODE HERE ###
+        
         mini_batch = (mini_batch_X, mini_batch_Y)
         mini_batches.append(mini_batch)
     
